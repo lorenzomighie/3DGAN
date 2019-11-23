@@ -20,8 +20,8 @@ def getVoxelFromMat(path, cube_len=64):
     """Mat 데이터로 부터 Voxel 을 가져오는 함수"""
     voxels = io.loadmat(path)['Volume']
     # voxels = np.pad(voxels, (1, 1), 'constant', constant_values=(0, 0))
-    if cube_len != 32 and cube_len == 64:
-        voxels = nd.zoom(voxels, (2, 2, 2), mode='constant', order=0)
+    #if cube_len != 32 and cube_len == 64:
+    #    voxels = nd.zoom(voxels, (2, 2, 2), mode='constant', order=0) --> my input is 64x64 already, no zoom needed
     return voxels
 
 
