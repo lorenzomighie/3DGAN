@@ -6,7 +6,7 @@ from train import train
 def main(args):
     if not args.test:
         train(args)
-    else:
+    #else:
         # test(args)
 
 
