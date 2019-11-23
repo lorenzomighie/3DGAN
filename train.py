@@ -5,7 +5,7 @@ from collections import OrderedDict
 from utils import make_hyparam_string, save_new_pickle, read_pickle, SavePloat_Voxels, generateZ
 import os
 
-from utils import ShapeNetDataset, var_or_cuda
+from utils import SetDataset, var_or_cuda
 from model import _G, _D
 from lr_sh import MultiStepLR
 
