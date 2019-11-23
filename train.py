@@ -65,6 +65,7 @@ def train(args):
     for epoch in range(args.n_epochs):
         for i, X in enumerate(dset_loaders):
             #   print(X.size())
+
             X = var_or_cuda(X)
 
             if X.size()[0] != int(args.batch_size):
@@ -132,9 +133,9 @@ def train(args):
             summary_writer.flush()
 
         # =============== each epoch save model or save image ===============#
-        print('Iter-{}; , D_loss : {:.4}, G_loss : {:.4}, D_acu : {:.4}, D_lr : {:.4}'.format(iteration, d_loss.data[0],
-                                                                                              g_loss.data[0],
-                                                                                              d_total_acu.data[0],
+        print('Iter-{}; , D_loss : {:.4}, G_loss : {:.4}, D_acu : {:.4}, D_lr : {:.4}'.format(iteration, d_loss,
+                                                                                              g_loss,
+                                                                                              d_total_acu,
                                                                                               D_solver.state_dict()[
                                                                                                   'param_groups'][0][
                                                                                                   "lr"]))
