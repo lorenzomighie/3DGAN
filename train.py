@@ -64,7 +64,7 @@ def train(args):
 
     for epoch in range(args.n_epochs):
         for i, X in enumerate(dset_loaders):
-            print(X.size())
+            #   print(X.size())
             X = var_or_cuda(X)
 
             if X.size()[0] != int(args.batch_size):
@@ -119,11 +119,11 @@ def train(args):
                 os.makedirs(log_save_path)
 
             info = {
-                'loss/loss_D_R': d_real_loss.data[0],
-                'loss/loss_D_F': d_fake_loss.data[0],
-                'loss/loss_D': d_loss.data[0],
-                'loss/loss_G': g_loss.data[0],
-                'loss/acc_D': d_total_acu.data[0]
+                'loss/loss_D_R': d_real_loss,
+                'loss/loss_D_F': d_fake_loss,
+                'loss/loss_D': d_loss,
+                'loss/loss_G': g_loss,
+                'loss/acc_D': d_total_acu
             }
 
             for tag, value in info.items():
@@ -140,6 +140,11 @@ def train(args):
                                                                                                   "lr"]))
 
         if (epoch + 1) % args.image_save_step == 0:
+
+            print('D(x) acc : ', d_real_acu,
+                'D(G(z)) loss : ', d_fake_acu)
+            print('D loss : ', d_loss,
+            'G loss : ', g_loss.data)
 
             samples = fake.cpu().data[:8].squeeze().numpy()
 
