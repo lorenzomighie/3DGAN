@@ -1,13 +1,13 @@
 import argparse
 from train import train
-from test import test
+# from test import test
 
 
 def main(args):
     if not args.test:
         train(args)
     else:
-        test(args)
+        # test(args)
 
 
 def str2bool(v):
