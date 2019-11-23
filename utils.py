@@ -14,6 +14,7 @@ from torch.autograd import Variable
 import torch
 import os
 import pickle
+import scipy
 
 
 def getVoxelFromMat(path, cube_len=64):
