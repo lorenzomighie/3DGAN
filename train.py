@@ -64,7 +64,7 @@ def train(args):
 
     for epoch in range(args.n_epochs):
         for i, X in enumerate(dset_loaders):
-            print(X.size())
+            # print(X.size())
             X = var_or_cuda(X)
 
             if X.size()[0] != int(args.batch_size):

@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser.add_argument('--z_dis', type=str, default="norm", choices=["norm", "uni"], help='uniform: uni, normal: norm')
     parser.add_argument('--bias', type=str2bool, default=False, help='using cnn bias')
     parser.add_argument('--leak_value', type=float, default=0.2, help='leakeay relu')
-    parser.add_argument('--cube_len', type=float, default=32, help='cube length')
+    parser.add_argument('--cube_len', type=float, default=64, help='cube length')
     parser.add_argument('--obj', type=str, default="chair", help='tranining dataset object category')
     parser.add_argument('--soft_label', type=str2bool, default=True, help='using soft_label')
     parser.add_argument('--lrsh', type=str2bool, default=True, help='for learning rate scheduler')
