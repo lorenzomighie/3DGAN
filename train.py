@@ -18,7 +18,7 @@ def train(args):
                     ("d_lr", args.d_lr),
                     ("z", args.z_dis),
                     ("bias", args.bias),
-                    ("sl", args.soft_label) ]
+                    ("sl", args.soft_label)]
 
     hyparam_dict = OrderedDict(((arg, value) for arg, value in hyparam_list))
     log_param = make_hyparam_string(hyparam_dict)
@@ -133,19 +133,17 @@ def train(args):
             summary_writer.flush()
 
         # =============== each epoch save model or save image ===============#
-        print('Iter-{}; , D_loss : {:.4}, G_loss : {:.4}, D_acu : {:.4}, D_lr : {:.4}'.format(iteration, d_loss,
-                                                                                              g_loss,
-                                                                                              d_total_acu,
-                                                                                              D_solver.state_dict()[
-                                                                                                  'param_groups'][0][
-                                                                                                  "lr"]))
+        print('Epoch:{}, Iter-{}; , D_loss : {:.4}, G_loss : {:.4}, D_acu : {:.4}, D_lr : {:.4}'.format(epoch,
+                                                                                                        iteration,
+                                                                                                        d_loss,
+                                                                                                        g_loss,
+                                                                                                        d_total_acu,
+                                                                                                        D_solver.state_dict()[
+                                                                                                            'param_groups'][
+                                                                                                            0][
+                                                                                                            "lr"]))
 
         if (epoch + 1) % args.image_save_step == 0:
-
-            print('D(x) acc : ', d_real_acu,
-                'D(G(z)) loss : ', d_fake_acu)
-            print('D loss : ', d_loss,
-            'G loss : ', g_loss.data)
 
             samples = fake.cpu().data[:8].squeeze().numpy()
 

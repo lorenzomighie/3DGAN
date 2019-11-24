@@ -22,7 +22,7 @@ def str2bool(v):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # Model Parmeters
-    parser.add_argument('--n_epochs', type=float, default=100, help='max epochs')
+    parser.add_argument('--n_epochs', type=float, default=1000, help='max epochs')
     parser.add_argument('--batch_size', type=float, default=32, help='each batch size')
     parser.add_argument('--g_lr', type=float, default=0.0025, help='generator learning rate')
     parser.add_argument('--d_lr', type=float, default=0.001, help='discriminator learning rate')
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     parser.add_argument('--bias', type=str2bool, default=False, help='using cnn bias')
     parser.add_argument('--leak_value', type=float, default=0.2, help='leakeay relu')
     parser.add_argument('--cube_len', type=float, default=64, help='cube length')
-    parser.add_argument('--obj', type=str, default="chair", help='tranining dataset object category')
+    parser.add_argument('--obj', type=str, default="dresser", help='tranining dataset object category')
     parser.add_argument('--soft_label', type=str2bool, default=True, help='using soft_label')
     parser.add_argument('--lrsh', type=str2bool, default=True, help='for learning rate scheduler')
 
@@ -45,7 +45,7 @@ if __name__ == '__main__':
                         help='for tensorboard log path save in output_dir + log_dir')
     parser.add_argument('--image_dir', type=str, default='/image/',
                         help='for output image path save in output_dir + image_dir')
-    parser.add_argument('--data_dir', type=str, default='/chair/', help='dataset load path')
+    parser.add_argument('--data_dir', type=str, default='/dresser/', help='dataset load path')
 
     # step parameter
     parser.add_argument('--pickle_step', type=int, default=100, help='pickle save at pickle_step epoch')
