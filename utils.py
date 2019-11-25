@@ -21,7 +21,7 @@ def getVoxelFromMat(path, cube_len=64):
     """Mat 데이터로 부터 Voxel 을 가져오는 함수"""
     voxels = io.loadmat(path)['Volume']
     # voxels = np.pad(voxels, (1, 1), 'constant', constant_values=(0, 0))
-    #if cube_len != 32 and cube_len == 64:
+    # if cube_len != 32 and cube_len == 64:
     #    voxels = nd.zoom(voxels, (2, 2, 2), mode='constant', order=0) --> my input is 64x64 already, no zoom needed
     return voxels
 
@@ -145,12 +145,12 @@ def save_new_pickle(path, iteration, G, G_solver, D_, D_solver):
     if not os.path.exists(path):
         os.makedirs(path)
     print("patth", path)
-    print("file", path + "G_" + str(iteration) + ".pkl" )
-    #with open(path + "/G_" + str(iteration) + ".pkl", "wb") as f:
+    print("file", path + "G_" + str(iteration) + ".pkl")
+    # with open(path + "/G_" + str(iteration) + ".pkl", "wb") as f:
     torch.save(G.state_dict(), path + "/G_" + str(iteration) + ".pkl")
-    with open(path + "G_optim_" + str(iteration) + ".pkl", "wb") as f:
-        torch.save(G_solver.state_dict(), f)
-    with open(path + "D_" + str(iteration) + ".pkl", "wb") as f:
-        torch.save(D_.state_dict(), f)
-    with open(path + "D_optim_" + str(iteration) + ".pkl", "wb") as f:
-        torch.save(D_solver.state_dict(), f)
+    # with open(path + "G_optim_" + str(iteration) + ".pkl", "wb") as f:
+    torch.save(G_solver.state_dict(), path + "/G_optim" + str(iteration) + ".pkl")
+    # with open(path + "D_" + str(iteration) + ".pkl", "wb") as f:
+    torch.save(D_.state_dict(), path + "/D_" + str(iteration) + ".pkl")
+    # with open(path + "D_optim_" + str(iteration) + ".pkl", "wb") as f:
+    torch.save(D_solver.state_dict(), path + "/D_optim" + str(iteration) + ".pkl")
