@@ -38,7 +38,7 @@ if __name__ == '__main__':
     parser.add_argument('--lrsh', type=str2bool, default=True, help='for learning rate scheduler')
 
     # dir parameters
-    parser.add_argument('--output_dir', type=str, default="/output", help='output path')
+    parser.add_argument('--output_dir', type=str, default="output", help='output path')
     parser.add_argument('--input_dir', type=str, default='dataset', help='input path')
     parser.add_argument('--pickle_dir', type=str, default='/pickle/', help='input path')
     parser.add_argument('--log_dir', type=str, default='/log/',
