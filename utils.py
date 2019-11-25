@@ -58,7 +58,7 @@ def SavePloat_Voxels(voxels, path, iteration):
         ax.set_xticklabels([])
         ax.set_yticklabels([])
         # ax.set_aspect('equal')
-    plt.savefig(path + '/{}.png'.format(str(iteration).zfill(3)), bbox_inches='tight')
+    plt.savefig('output/image' + '/{}.png'.format(str(iteration).zfill(3)), bbox_inches='tight')
     plt.close()
 
     scipy.io.savemat(('output/' + str(iteration) + '.mat'), {'Volume': voxels})

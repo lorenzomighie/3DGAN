@@ -59,7 +59,7 @@ def train(args):
 
     criterion = nn.BCELoss()
 
-    pickle_path = "." + args.pickle_dir + log_param
+    pickle_path = args.pickle_dir
     read_pickle(pickle_path, G, G_solver, D, D_solver)
 
     for epoch in range(args.n_epochs):
@@ -112,6 +112,16 @@ def train(args):
             g_loss.backward()
             G_solver.step()
 
+            # ==================== Save Good Results ================#
+
+            if g_loss < 0.8:
+
+                samples = fake.cpu().data[:8].squeeze().numpy()
+                image_path = args.output_dir + args.image_dir + log_param
+                if not os.path.exists(image_path):
+                    os.makedirs(image_path)
+                SavePloat_Voxels(samples, image_path, iteration)
+
         # =============== logging each iteration ===============#
         iteration = str(G_solver.state_dict()['state'][G_solver.state_dict()['param_groups'][0]['params'][0]]['step'])
         if args.use_tensorboard:
@@ -142,7 +152,7 @@ def train(args):
                                                                                                             'param_groups'][
                                                                                                             0][
                                                                                                             "lr"]))
-
+        """
         if (epoch + 1) % args.image_save_step == 0:
 
             samples = fake.cpu().data[:8].squeeze().numpy()
@@ -152,9 +162,10 @@ def train(args):
                 os.makedirs(image_path)
 
             SavePloat_Voxels(samples, image_path, iteration)
+        """
 
         if (epoch + 1) % args.pickle_step == 0:
-            pickle_save_path = args.output_dir + args.pickle_dir + log_param
+            pickle_save_path = args.output_dir + args.pickle_dir
             save_new_pickle(pickle_save_path, iteration, G, G_solver, D, D_solver)
 
         if args.lrsh:

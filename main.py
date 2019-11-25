@@ -33,19 +33,19 @@ if __name__ == '__main__':
     parser.add_argument('--bias', type=str2bool, default=False, help='using cnn bias')
     parser.add_argument('--leak_value', type=float, default=0.2, help='leakeay relu')
     parser.add_argument('--cube_len', type=float, default=64, help='cube length')
-    parser.add_argument('--obj', type=str, default="dresser", help='tranining dataset object category')
+    parser.add_argument('--obj', type=str, default="bathtub", help='tranining dataset object category')
     parser.add_argument('--soft_label', type=str2bool, default=True, help='using soft_label')
     parser.add_argument('--lrsh', type=str2bool, default=True, help='for learning rate scheduler')
 
     # dir parameters
     parser.add_argument('--output_dir', type=str, default="/output", help='output path')
     parser.add_argument('--input_dir', type=str, default='dataset', help='input path')
-    parser.add_argument('--pickle_dir', type=str, default='/pickle/', help='input path')
+    parser.add_argument('--pickle_dir', type=str, default='/pickle', help='input path')
     parser.add_argument('--log_dir', type=str, default='/log/',
                         help='for tensorboard log path save in output_dir + log_dir')
     parser.add_argument('--image_dir', type=str, default='/image/',
                         help='for output image path save in output_dir + image_dir')
-    parser.add_argument('--data_dir', type=str, default='/dresser/', help='dataset load path')
+    parser.add_argument('--data_dir', type=str, default='/bathtub/', help='dataset load path')
 
     # step parameter
     parser.add_argument('--pickle_step', type=int, default=100, help='pickle save at pickle_step epoch')
