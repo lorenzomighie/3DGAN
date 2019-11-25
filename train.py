@@ -165,6 +165,7 @@ def train(args):
         """
 
         if (epoch + 1) % args.pickle_step == 0:
+            print('saving pickle')
             pickle_save_path = args.output_dir + args.pickle_dir
             save_new_pickle(pickle_save_path, iteration, G, G_solver, D, D_solver)
 
