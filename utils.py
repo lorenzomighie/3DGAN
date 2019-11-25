@@ -145,8 +145,8 @@ def save_new_pickle(path, iteration, G, G_solver, D_, D_solver):
     if not os.path.exists(path):
         os.makedirs(path)
 
-    with open(path + "/G_" + str(iteration) + ".pkl", "wb") as f:
-        torch.save(G.state_dict(), f)
+    #with open(path + "/G_" + str(iteration) + ".pkl", "wb") as f:
+    torch.save(G.state_dict(), path + "/G_" + str(iteration) + ".pkl")
     with open(path + "/G_optim_" + str(iteration) + ".pkl", "wb") as f:
         torch.save(G_solver.state_dict(), f)
     with open(path + "/D_" + str(iteration) + ".pkl", "wb") as f:
