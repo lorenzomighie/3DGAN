@@ -48,7 +48,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_dir', type=str, default='/bathtub/', help='dataset load path')
 
     # step parameter
-    parser.add_argument('--pickle_step', type=int, default=3, help='pickle save at pickle_step epoch')
+    parser.add_argument('--pickle_step', type=int, default=100, help='pickle save at pickle_step epoch')
     parser.add_argument('--log_step', type=int, default=1, help='tensorboard log save at log_step epoch')
     parser.add_argument('--image_save_step', type=int, default=5, help='output image save at image_save_step epoch')
 
