@@ -113,6 +113,8 @@ def train(args):
             G_solver.step()
 
             # ==================== Save Good Results ================#
+            iteration = str(
+                G_solver.state_dict()['state'][G_solver.state_dict()['param_groups'][0]['params'][0]]['step'])
 
             if g_loss < 0.8:
 
@@ -123,7 +125,6 @@ def train(args):
                 SavePloat_Voxels(samples, image_path, iteration)
 
         # =============== logging each iteration ===============#
-        iteration = str(G_solver.state_dict()['state'][G_solver.state_dict()['param_groups'][0]['params'][0]]['step'])
         if args.use_tensorboard:
             log_save_path = args.output_dir + args.log_dir + log_param
             if not os.path.exists(log_save_path):
