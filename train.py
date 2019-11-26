@@ -116,7 +116,7 @@ def train(args):
             iteration = str(
                 G_solver.state_dict()['state'][G_solver.state_dict()['param_groups'][0]['params'][0]]['step'])
 
-            if g_loss < 0.8:
+            if g_loss < 0.7:
 
                 samples = fake.cpu().data[:8].squeeze().numpy()
                 image_path = args.output_dir + args.image_dir + log_param
@@ -153,7 +153,7 @@ def train(args):
                                                                                                             'param_groups'][
                                                                                                             0][
                                                                                                             "lr"]))
-        """
+
         if (epoch + 1) % args.image_save_step == 0:
 
             samples = fake.cpu().data[:8].squeeze().numpy()
@@ -163,7 +163,7 @@ def train(args):
                 os.makedirs(image_path)
 
             SavePloat_Voxels(samples, image_path, iteration)
-        """
+
 
         if (epoch + 1) % args.pickle_step == 0:
             print('saving pickle')
