@@ -15,6 +15,7 @@ import torch
 import os
 import pickle
 import scipy
+from os.path import join
 
 
 def getVoxelFromMat(path, cube_len=64):
@@ -146,8 +147,10 @@ def save_new_pickle(path, iteration, G, G_solver, D_, D_solver):
         os.makedirs(path)
     print("patth", path)
     print("file", path + "G_" + str(iteration) + ".pkl")
+
     # with open(path + "/G_" + str(iteration) + ".pkl", "wb") as f:
-    torch.save(G.state_dict(), path + "/G_" + str(iteration) + ".pkl")
+    torch.save(G.state_dict(), join(path, "/G_" + str(iteration) + ".pkl"))
+    print(join(path, "/G_" + str(iteration) + ".pkl"))
     # with open(path + "G_optim_" + str(iteration) + ".pkl", "wb") as f:
     torch.save(G_solver.state_dict(), path + "/G_optim" + str(iteration) + ".pkl")
     # with open(path + "D_" + str(iteration) + ".pkl", "wb") as f:
