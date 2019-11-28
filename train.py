@@ -131,8 +131,8 @@ def train(args):
                 os.makedirs(log_save_path)
 
             info = {
-                'loss/loss_D_R': d_real_loss,
-                'loss/loss_D_F': d_fake_loss,
+                'loss/loss_D(x)': d_real_loss,
+                'loss/loss_D(G(z))': d_fake_loss,
                 'loss/loss_D': d_loss,
                 'loss/loss_G': g_loss,
                 'loss/acc_D': d_total_acu
