@@ -60,7 +60,7 @@ def train(args):
     criterion = nn.BCELoss()
 
     # pickle_path = args.pickle_dir
-    pickle_path = 'pickle/'
+    pickle_path = 'pickle'
     read_pickle(pickle_path, G, G_solver, D, D_solver)
 
     for epoch in range(args.n_epochs):
