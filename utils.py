@@ -130,11 +130,11 @@ def read_pickle(path, G, G_solver, D_, D_solver):
 
         with open(path + "/G_" + recent_iter + ".pkl", "rb") as f:
             G.load_state_dict(torch.load(f))
-        with open(path + "/G_optim_" + recent_iter + ".pkl", "rb") as f:
+        with open(path + "/G_optim" + recent_iter + ".pkl", "rb") as f:
             G_solver.load_state_dict(torch.load(f))
         with open(path + "/D_" + recent_iter + ".pkl", "rb") as f:
             D_.load_state_dict(torch.load(f))
-        with open(path + "/D_optim_" + recent_iter + ".pkl", "rb") as f:
+        with open(path + "/D_optim" + recent_iter + ".pkl", "rb") as f:
             D_solver.load_state_dict(torch.load(f))
 
 
