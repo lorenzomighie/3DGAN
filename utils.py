@@ -121,10 +121,11 @@ def generateZ(args):
 def read_pickle(path, G, G_solver, D_, D_solver):
     try:
 
-        files = os.listdir(path)
-        file_list = [int(file.split('_')[-1].split('.')[0]) for file in files]
-        file_list.sort()
-        recent_iter = str(file_list[-1])
+        # files = os.listdir(path)
+        #file_list = [int(file.split('_')[-1].split('.')[0]) for file in files]
+        #file_list.sort()
+        #recent_iter = str(file_list[-1])
+        recent_iter = '8500'
         print(recent_iter, path)
 
         with open(path + "/G_" + recent_iter + ".pkl", "rb") as f:
