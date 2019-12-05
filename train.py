@@ -78,9 +78,8 @@ def train(args):
             fake_labels = var_or_cuda(torch.zeros(args.batch_size))
 
             if args.soft_label:
-                #real_labels = var_or_cuda(torch.Tensor(args.batch_size).uniform_(0.7, 1.2))
-                real_labels = var_or_cuda(torch.Tensor(args.batch_size).uniform_(0.90, 0.91))
-                fake_labels = var_or_cuda(torch.Tensor(args.batch_size).uniform_(0.00, 0.01))
+                real_labels = var_or_cuda(torch.Tensor(args.batch_size).uniform_(0.7, 1.2))
+                fake_labels = var_or_cuda(torch.Tensor(args.batch_size).uniform_(0, 0.3))
 
             # ============= Train the discriminator =============#
             d_real = D(X)
