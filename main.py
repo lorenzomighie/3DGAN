@@ -24,7 +24,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # Model Parmeters
     parser.add_argument('--n_epochs', type=float, default=1000, help='max epochs')
-    parser.add_argument('--batch_size', type=float, default=32, help='each batch size')
+    parser.add_argument('--batch_size', type=float, default=16, help='each batch size')
     parser.add_argument('--g_lr', type=float, default=0.0025, help='generator learning rate')
     parser.add_argument('--d_lr', type=float, default=0.001, help='discriminator learning rate')
     parser.add_argument('--beta', type=tuple, default=(0.5, 0.5), help='beta for adam')
