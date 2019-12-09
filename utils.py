@@ -125,7 +125,7 @@ def read_pickle(path, G, G_solver, D_, D_solver):
         #file_list = [int(file.split('_')[-1].split('.')[0]) for file in files]
         #file_list.sort()
         #recent_iter = str(file_list[-1])
-        recent_iter = '8500'
+        recent_iter = '12000'
         print(recent_iter, path)
 
         with open(path + "/G_" + recent_iter + ".pkl", "rb") as f:
