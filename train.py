@@ -104,12 +104,13 @@ def train(args):
                 D_solver.step()
 
             # build graph
-
+            """
             with summary_writer as w:
                 w.add_graph(D, X)
                 w.add_graph(G, Z)
                 w.close()
             exit()
+            """
 
             # =============== Train the generator ===============#
 
