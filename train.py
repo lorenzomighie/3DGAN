@@ -49,6 +49,7 @@ def train(args):
     D_solver = optim.Adam(D.parameters(), lr=args.d_lr, betas=args.beta)
     G_solver = optim.Adam(G.parameters(), lr=args.g_lr, betas=args.beta)
 
+
     if args.lrsh:
         D_scheduler = MultiStepLR(D_solver, milestones=[500, 1000])
 
@@ -62,6 +63,8 @@ def train(args):
     # pickle_path = args.pickle_dir
     pickle_path = 'pickle'
     read_pickle(pickle_path, G, G_solver, D, D_solver)
+
+
 
     for epoch in range(args.n_epochs):
         for i, X in enumerate(dset_loaders):
@@ -99,6 +102,14 @@ def train(args):
                 D.zero_grad()
                 d_loss.backward()
                 D_solver.step()
+
+            # build graph
+
+            with summary_writer as w:
+                w.add_graph(D, X)
+                w.add_graph(G, Z)
+                w.close()
+            exit()
 
             # =============== Train the generator ===============#
 
