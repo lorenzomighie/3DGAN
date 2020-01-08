@@ -6,6 +6,8 @@
 
 3) Run the notebook 3DGAN.ipynb on Colab
 
+For more details see Training_of_a_3D_GAN.pdf
+
 References:
 
 https://github.com/rimchang/3DGAN-Pytorch
