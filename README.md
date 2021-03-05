@@ -1,8 +1,8 @@
 # 3DGAN
 
-1) Convert the dataset of meshes into voxels using matlab script polygon2voxel/preprocessing changing the path of the folders
+1) Convert the dataset of meshes into voxels using matlab script polygon2voxel/preprocessing.m 
 
-2) Upload the preprocessed dataset in Google Drive
+2) Upload the preprocessed dataset into a  Google Drive folder
 
 3) Run the notebook 3DGAN.ipynb on Colab
 
