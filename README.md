@@ -1,4 +1,8 @@
-# 3DGAN
+# 3D GAN
+
+Use of a Generative Adversarial Network to produce 3D shapes (in the voxel domain) of sofas and tables.
+
+# How to Use
 
 1) Convert the dataset of meshes into voxels using matlab script polygon2voxel/main.m 
 
