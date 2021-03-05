@@ -1,6 +1,6 @@
 # 3D GAN
 
-Use of a Generative Adversarial Network to produce 3D shapes (in the voxel domain) of sofas and tables.
+Use of a Generative Adversarial Network to produce 3D shapes (in the voxel domain) of the sofas and tables which belong to the ModelNet10 dataset.
 
 # How to Use
 
