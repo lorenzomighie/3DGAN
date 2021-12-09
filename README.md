@@ -14,7 +14,7 @@ Use of a Generative Adversarial Network to produce 3D shapes (in the voxel domai
 
 5) Run the notebook 3DGAN.ipynb on Colab;
 
-6) Download the results and use the matlab scripts polygon2voxel/visualize.m to look into the results and polygon2voxel/nearest_neighbour.m to look at the nearest neighbour of a certain voxel produced by the network with the shape of the dataset.
+6) Download the results and use the matlab scripts polygon2voxel/visualize.m to look into the results and polygon2voxel/nearest_neighbour.m to find the nearest neighbour of a the voxel produced.
 
 For more details see Training_of_a_3D_GAN.pdf
 
